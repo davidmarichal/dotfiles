@@ -1,6 +1,8 @@
-" settings --------------------------------------------------------
+" vim:fdm=marker
 
 set nocompatible
+
+" settings {{{
 
 " syntax highlighting {{{
 set t_Co=256
@@ -8,7 +10,7 @@ syntax on
 colorscheme molokai
 " }}}
 
-" directories {{{
+" vim directories {{{
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
@@ -24,8 +26,10 @@ set autoindent
 set backspace=indent,eol,start
 set cursorline
 set foldenable
+set foldmethod=syntax
 set gdefault
 set hlsearch
+set laststatus=2
 set nu
 set rnu
 set shiftwidth=2
@@ -33,7 +37,6 @@ set smarttab
 set title
 set undofile
 set nowrap
-set laststatus=2
 " }}}
 
 " remap :W to :w {{{
@@ -64,7 +67,13 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 " }}}
 
-" plugins ---------------------------------------------------------
+" toggle folds {{{
+noremap <Space> za
+" }}}
+
+" }}}
+
+" plugins {{{
 
 " load plugins {{{
 filetype off
@@ -98,4 +107,6 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+" }}}
+
 " }}}
