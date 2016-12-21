@@ -67,6 +67,7 @@ noremap <Right> <nop>
 " plugins ---------------------------------------------------------
 
 " load plugins {{{
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -75,6 +76,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
+filetype plugin indent on
 " }}}
 
 " scrooloose/nerdtree {{{
