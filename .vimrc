@@ -1,40 +1,99 @@
-set nocompatible
-filetype off			" required
+" settings --------------------------------------------------------
 
-" Set the runtime path to include Vundle and initialize
+set nocompatible
+
+" syntax highlighting {{{
+set t_Co=256
+syntax on
+colorscheme molokai
+" }}}
+
+" directories {{{
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+set undodir=~/.vim/undo
+" }}}
+
+" cycle between buffers {{{
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
+" }}}
+
+" misc {{{
+set autoindent
+set backspace=indent,eol,start
+set cursorline
+set foldenable
+set gdefault
+set hlsearch
+set nu
+set rnu
+set shiftwidth=2
+set smarttab
+set title
+set undofile
+set nowrap
+set laststatus=2
+" }}}
+
+" remap :W to :w {{{
+command! W w
+" }}}
+
+" toggle show tabs and trailing spaces {{{
+set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
+set fcs=fold:-
+nnoremap <silent> <leader>c :set nolist!<CR>
+" }}}
+
+" insert newline {{{
+map <leader><Enter> o<Esc>
+" }}}
+
+" page up and down {{{
+map <PageUp> <C-U>
+map <PageDown> <C-D>
+imap <PageUp> <C-O><C-U>
+imap <PageDown> <C-O><C-D>
+" }}}
+
+" disable arrow keys {{{
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+" }}}
+
+" plugins ---------------------------------------------------------
+
+" load plugins {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-syntastic/syntastic'
 
-" All plugins must be before the following line
-call vundle#end()		" required
-filetype plugin indent on	" required
+call vundle#end()
+" }}}
 
-" Set number lines
-set nu
-set rnu
-
-" Disable word wrap
-set nowrap
-
-" Give a shortcut key to NERD Tree
+" scrooloose/nerdtree {{{
 map <F2> :NERDTreeToggle<CR>
+" }}}
 
-" Set color to 256
-set t_Co=256
-
-" Status bar
-set laststatus=2
-let g:airline_theme='simple'
+" vim-airline/vim-airline {{{
+let g:airline_powerline_fonts=1
+let g:airline_enable_syntastic=1
 let g:airline#extensions#tabline#enabled=1
+" }}}
 
-" Cycle thru buffers
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
+" vim-syntastic/syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+" }}}
