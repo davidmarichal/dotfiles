@@ -1,12 +1,25 @@
-" vim:fdm=marker
+" BASIC
 
 set nocompatible
 
-" settings {{{
+" Enable syntax
+syntax enable
+
+" FINDING FILES
+
+" Search into subfolders
+" Provides tab-completion for all files
+set path+=**
+
+" Display all matching file when we tab-complete
+set wildmenu
+
+" -----------------------------------------------------------------------------
+
+" settings
 
 " syntax highlighting {{{
 set t_Co=256
-syntax on
 colorscheme molokai
 " }}}
 
@@ -25,15 +38,13 @@ set undodir=~/.vim/undo
 set autoindent
 set backspace=indent,eol,start
 set cursorline
-set foldenable
-set foldmethod=syntax
 set gdefault
 set hlsearch
 set laststatus=2
 set nu
 set rnu
-set shiftwidth=2
-set smarttab
+set tabstop=4
+set expandtab
 set title
 set undofile
 set nowrap
@@ -41,12 +52,6 @@ set nowrap
 
 " remap :W to :w {{{
 command! W w
-" }}}
-
-" toggle show tabs and trailing spaces {{{
-set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
-set fcs=fold:-
-nnoremap <silent> <leader>c :set nolist!<CR>
 " }}}
 
 " insert newline {{{
@@ -70,6 +75,8 @@ noremap <Right> <nop>
 " toggle folds {{{
 noremap <Space> za
 " }}}
+
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " }}}
 
@@ -107,6 +114,8 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+let g:syntastic_java_checkers=['checkstyle', 'javac']
+let g:syntastic_java_javac_classpath = '/home/david/Android/platforms/android-25/android.jar'
 " }}}
 
 " }}}
