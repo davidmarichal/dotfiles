@@ -1,6 +1,20 @@
 [push]
-	default = simple
+    default = simple
 [user]
-	name = David Marichal
-	email = me@davidmarichal.com
-	signingkey = me@davidmarichal.com
+    name = David Marichal
+    email = me@davidmarichal.com
+    signingkey = me@davidmarichal.com
+[mergetool]
+    keepBackup = false
+    prompt = false
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+	d = difftool
+	m = mergetool
+	s = status
