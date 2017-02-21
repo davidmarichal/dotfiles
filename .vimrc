@@ -15,9 +15,9 @@ set t_Co=256
 colorscheme molokai
 
 " vim directories
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undodir  =~/.vim/undo
+set backupdir=$HOME/.vim/backups
+set directory=$HOME/.vim/swaps
+set undodir  =$HOME/.vim/undo
 
 " Cycle between buffers
 :nnoremap <Tab>   :bnext    <CR>
@@ -64,7 +64,7 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " Load Vundle and plugins
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'scrooloose/nerdtree'
@@ -91,5 +91,5 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-let g:syntastic_java_checkers=['checkstyle', 'javac']
-let g:syntastic_java_javac_classpath='/home/david/Android/platforms/android-25/*.jar'
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_classpath=$ANDROID_HOME.'/platforms/android-25/*.jar'
