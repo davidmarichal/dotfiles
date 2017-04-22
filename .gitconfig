@@ -15,7 +15,7 @@
 [difftool]
     prompt = false
 [alias]
-	d = difftool
-	m = mergetool
+    d = difftool
+    m = mergetool
     s = status
     l = log --graph --abbrev-commit --decorate --date=relative --all   
