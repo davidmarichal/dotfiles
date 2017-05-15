@@ -70,7 +70,6 @@ call vundle#begin()
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'ARM9/snes-syntax-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -92,9 +91,6 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-
-" ARM9/snes-syntax-vim
-au BufNewFile,BufRead *.asm,*.inc set filetype=snes
 
 " cpp
 let g:syntastic_cpp_check_header=1
