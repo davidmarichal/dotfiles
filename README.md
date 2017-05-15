@@ -1,4 +1,4 @@
 # dotfiles
 
 ## Copyright
-See [LICENSE](LICENSE)
+See [UNLICENSE](UNLICENSE)
