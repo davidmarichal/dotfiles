@@ -18,4 +18,4 @@
     d = difftool
     m = mergetool
     s = status
-    l = log --graph --abbrev-commit --decorate --date=relative --all   
+    l = log --graph --abbrev-commit --decorate --date=relative --all

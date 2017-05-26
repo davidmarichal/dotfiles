@@ -1,25 +1,18 @@
 [ -n "$PS1" ] && source $HOME/.bash_profile;
 
-# load antigen
 source $HOME/.antigen/antigen.zsh
 
-#
+# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# jump to marked directories
+# Plugins
 antigen bundle jump
-
-# autosuggestions
 antigen bundle zsh-users/zsh-autosuggestions
-
-# autocompletion
 antigen bundle zsh-users/zsh-completions
-
-# syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# fish shell theme
+# Theme
 antigen theme fishy
 
-# tell antigen that you're done
+# Tell Antigen that you're done.
 antigen apply
