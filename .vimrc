@@ -42,8 +42,8 @@ set softtabstop=4
 map   <space> /
 map <c-space> ?
 
-map <tab>   :bnext    <cr>
-map <s-tab> :bprevious<cr>
+nmap <tab>   :bnext    <cr>
+nmap <s-tab> :bprevious<cr>
 
 " Layout
 set cursorline
@@ -51,7 +51,12 @@ set nowrap
 set number
 set relativenumber
 
-" Plugins
+" Plugins ------------------------------------------------"
+" ctrlpvim/ctrlp
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|svn)$',
+    \ 'file': '\v\.(so|swp|zip)$',
+    \ }
 
 " scrooloose/nerdtree
 map <leader>1 :NERDTreeToggle<cr>
@@ -70,9 +75,13 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 
+" Languages ------------------------------------------------------------------"
 " c++
 let g:syntastic_cpp_check_header=1
 
 " java
 let g:syntastic_java_checkers=['javac']
 let g:syntastic_java_javac_classpath=$ANDROID_HOME.'/platforms/android-26/*.jar'
+
+" php
+let g:syntastic_php_checkers=['php']
