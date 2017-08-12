@@ -1,21 +1,9 @@
-[push]
-    default = simple
 [user]
     name = David Marichal
     email = me@davidmarichal.com
-    signingkey = me@davidmarichal.com
-[mergetool]
-    keepBackup = false
-    prompt = false
-[merge]
-    tool = vimdiff
-    conflictstyle = diff3
+    signingkey = CBB5FC39
 [diff]
     tool = vimdiff
-[difftool]
-    prompt = false
-[alias]
-    d = difftool
-    m = mergetool
-    s = status
-    l = log --graph --abbrev-commit --decorate --date=relative --all
+[push]
+    default = simple
+

@@ -51,5 +51,3 @@ if test -d "$HOME/.gem/ruby/2.4.0/bin"
 then
     PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH";
 fi
-
-
