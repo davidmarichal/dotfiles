@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-alias c="clear";
-alias e="$EDITOR";
-alias header="curl -I";
-alias mkdir="mkdir -p";
-alias tmux="tmux -2";
-alias v="$VISUAL";
