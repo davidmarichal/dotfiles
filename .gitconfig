@@ -2,8 +2,20 @@
     name = David Marichal
     email = me@davidmarichal.com
     signingkey = CBB5FC39
+[alias]
+    d = difftool
+    m = mergetool
+    s = status
+    l = log --graph --abbrev-commit --decorate --date=relative --all
 [diff]
     tool = vimdiff
+[difftool]
+    prompt = false
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    keepBackup = false
+    prompt = false
 [push]
     default = simple
-
