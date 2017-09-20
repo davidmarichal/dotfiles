@@ -57,6 +57,10 @@ set relativenumber
 " scrooloose/nerdtree
 map <leader>1 :NERDTreeToggle<cr>
 
+" vim-airline/vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 " vim-syntastic/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

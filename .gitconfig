@@ -1,7 +1,5 @@
 [user]
     name = David Marichal
-    email = me@davidmarichal.com
-    signingkey = CBB5FC39
 [alias]
     d = difftool
     m = mergetool
