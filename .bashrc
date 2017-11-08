@@ -2,9 +2,6 @@
 
 test -z "$PS1" && return;
 
-# Color mode.
-export TERM=xterm-256color;
-
 # Make vim the default editor.
 export EDITOR=vim;
 export VISUAL=vim;
@@ -13,22 +10,30 @@ export VISUAL=vim;
 export LANG="en_US.UTF-8";
 export LC_ALL="en_US.UTF-8";
 
+# Load bash completion
+if test -f "/etc/bash_completion"; then
+  . "/etc/bash_completion";
+fi
+
 # Load aliases.
 if test -f "$HOME/.bash_aliases"; then
-    . $HOME/.bash_aliases
+  . "$HOME/.bash_aliases";
 fi
 
 # Load env variables.
 if test -f "$HOME/.bash_env"; then
-    . $HOME/.bash_env
+  . "$HOME/.bash_env";
 fi
 
 # Composer
 if test -d "$HOME/.config/composer/vendor/bin"; then
-    PATH="$HOME/.config/composer/vendor/bin:$PATH";
+  PATH="$HOME/.config/composer/vendor/bin:$PATH";
 fi
 
 # JDK
-if test -d "/usr/lib/jvm/default-java"; then
+if test -z "$JAVA_HOME"; then
+  # Ubuntu 16.04
+  if test -d "/usr/lib/jvm/default-java"; then
     JAVA_HOME="/usr/lib/jvm/default-java";
+  fi
 fi

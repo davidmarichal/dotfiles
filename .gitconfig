@@ -1,19 +1,21 @@
 [user]
-    name = David Marichal
+  name = David Marichal
 [alias]
-    d = difftool
-    m = mergetool
-    s = status
-    l = log --graph --abbrev-commit --decorate --date=relative --all
+  d = difftool
+  fp = fetch -p
+  l = log --graph --abbrev-commit --decorate --date=relative --all
+  m = mergetool
+  p = pull
+  s = status
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [difftool]
-    prompt = false
+  prompt = false
 [merge]
-    tool = vimdiff
-    conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
-    keepBackup = false
-    prompt = false
+  keepBackup = false
+  prompt = false
 [push]
-    default = simple
+  default = simple
